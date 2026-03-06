@@ -652,6 +652,26 @@ img {
   color: var(--text-3);
 }
 
+.footer-contact {
+  display: flex;
+  align-items: center;
+}
+
+.support-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-2);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.support-email:hover {
+  color: var(--color-primary);
+}
+
 /* ═══════════════════════════════════════════════════════════
    Responsive
    ═══════════════════════════════════════════════════════════ */
