@@ -8,7 +8,10 @@ function App() {
       {/* ── Navbar ──────────────────────────────────────────── */}
       <nav className="navbar">
         <div className="container nav-inner">
-          <span className="logo">Fluent<span className="logo-accent">Edge</span></span>
+          <div className="logo">
+            <svg className="logo-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="34" viewBox="0 0 82 100" fill="none"><path d="M0.761078 27.6596C3.03055 8.65248 18.8462 0 27.7115 0H81.2576C81.2576 19.0071 68.2884 22.104 61.5508 23.0496C58.0129 23.5462 47.721 23.0496 42.7565 23.0496C37.7919 23.0496 31.1783 22.695 27.1536 24.8227C23.129 26.9504 23.6075 31.5603 23.6075 31.5603C23.6075 31.5603 23.9347 38.6525 29.2538 38.6525C11.878 41.1348 4.18899 55.6738 0.761078 63.1206V27.6596Z" fill="url(#pA)" /><path d="M1.42485 80.8511C5.84961 65.2482 21.4524 64.1844 31.0269 64.1844H44.8567C67.0376 64.1844 70.08 43.6853 69.3759 37.5887L28.8993 38.6525C20.9896 38.6525 4.88102 45.8744 0.885069 61.7021C0.175847 66.3121 0.579864 75.7862 1.42485 80.8511Z" fill="url(#pB)" /><path d="M0.746944 99.8556C11.5912 101.03 32.7259 95.5591 30.5109 64.286C18.6155 63.4752 -4.43414 66.6667 0.746944 99.8556Z" fill="url(#pC)" /><defs><linearGradient id="pA" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0077FF" /><stop offset="1" stopColor="#003470" /></linearGradient><linearGradient id="pB" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0079FF" /><stop offset="1" stopColor="#0058B8" /></linearGradient><linearGradient id="pC" x1="15.4" y1="64.2" x2="15.4" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#FE6201" /><stop offset="1" stopColor="#FF6200" /></linearGradient></defs></svg>
+            Fluent<span className="logo-accent">Edge</span>
+          </div>
           <div className="nav-links">
             <a href="#features">Features</a>
             <a href="#programs">Programs</a>
@@ -57,7 +60,7 @@ function App() {
           <div className="hero-visual">
             <div className="phone-frame">
               <div className="phone-screen">
-                <img src="/app-mockup.png" alt="FluentEdge App Dashboard" />
+                <PhoneDashboard />
               </div>
             </div>
           </div>
@@ -179,7 +182,10 @@ function App() {
       {/* ── Footer ──────────────────────────────────────────── */}
       <footer className="footer">
         <div className="container footer-inner">
-          <span className="logo">Fluent<span className="logo-accent">Edge</span></span>
+          <div className="logo">
+            <svg className="logo-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="34" viewBox="0 0 82 100" fill="none"><path d="M0.761078 27.6596C3.03055 8.65248 18.8462 0 27.7115 0H81.2576C81.2576 19.0071 68.2884 22.104 61.5508 23.0496C58.0129 23.5462 47.721 23.0496 42.7565 23.0496C37.7919 23.0496 31.1783 22.695 27.1536 24.8227C23.129 26.9504 23.6075 31.5603 23.6075 31.5603C23.6075 31.5603 23.9347 38.6525 29.2538 38.6525C11.878 41.1348 4.18899 55.6738 0.761078 63.1206V27.6596Z" fill="url(#fA)" /><path d="M1.42485 80.8511C5.84961 65.2482 21.4524 64.1844 31.0269 64.1844H44.8567C67.0376 64.1844 70.08 43.6853 69.3759 37.5887L28.8993 38.6525C20.9896 38.6525 4.88102 45.8744 0.885069 61.7021C0.175847 66.3121 0.579864 75.7862 1.42485 80.8511Z" fill="url(#fB)" /><path d="M0.746944 99.8556C11.5912 101.03 32.7259 95.5591 30.5109 64.286C18.6155 63.4752 -4.43414 66.6667 0.746944 99.8556Z" fill="url(#fC)" /><defs><linearGradient id="fA" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0077FF" /><stop offset="1" stopColor="#003470" /></linearGradient><linearGradient id="fB" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0079FF" /><stop offset="1" stopColor="#0058B8" /></linearGradient><linearGradient id="fC" x1="15.4" y1="64.2" x2="15.4" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#FE6201" /><stop offset="1" stopColor="#FF6200" /></linearGradient></defs></svg>
+            Fluent<span className="logo-accent">Edge</span>
+          </div>
           <p>© {new Date().getFullYear()} FluentEdge. All rights reserved.</p>
         </div>
       </footer>
@@ -228,6 +234,112 @@ function StepCard({ number, title, desc }) {
       <div className="step-number">{number}</div>
       <h3>{title}</h3>
       <p>{desc}</p>
+    </div>
+  )
+}
+
+/* ── Phone Dashboard Recreation ──────────────────────────────── */
+function PhoneDashboard() {
+  return (
+    <div className="mock-dash">
+      {/* Status bar */}
+      <div className="mock-statusbar">
+        <span style={{ fontSize: '10px', fontWeight: 600 }}>9:14 AM</span>
+        <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#333"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" /></svg>
+          <svg width="14" height="12" viewBox="0 0 24 24" fill="#333"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z" /></svg>
+        </div>
+      </div>
+
+      {/* Header */}
+      <div className="mock-header">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="mock-avatar">👤</div>
+          <div>
+            <div style={{ fontSize: '10px', color: '#757575' }}>Welcome,</div>
+            <div style={{ fontSize: '13px', fontWeight: 700, color: '#212121' }}>Muhammad Shaaz</div>
+          </div>
+        </div>
+        <div className="mock-notif">🔔<span className="mock-notif-dot">2</span></div>
+      </div>
+      <div className="mock-date-row">
+        <span>Tue, 24 Feb 2026</span><span>Program Name</span>
+      </div>
+
+      {/* XP & Streak */}
+      <div className="mock-xp-row">
+        <div className="mock-xp-card" style={{ background: '#1A73E8' }}>
+          <div style={{ fontSize: '9px', opacity: 0.85 }}>Total Program<br />Points Earned</div>
+          <div style={{ fontSize: '18px', fontWeight: 800 }}>100 XP ⚡</div>
+        </div>
+        <div className="mock-xp-card" style={{ background: '#00A86B' }}>
+          <div style={{ fontSize: '9px', opacity: 0.85 }}>Complete tasks<br />to keep streak</div>
+          <div style={{ fontSize: '18px', fontWeight: 800 }}>7 Days 🔥</div>
+        </div>
+      </div>
+
+      {/* Continue Learning */}
+      <div className="mock-card">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+          <span style={{ fontSize: '12px', fontWeight: 700, color: '#212121' }}>Continue Learning</span>
+          <span style={{ fontSize: '10px' }}>📋</span>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10px', color: '#757575', marginBottom: '4px' }}>
+          <span>Program Completion</span><span style={{ fontWeight: 600, color: '#1A73E8' }}>50.0 %</span>
+        </div>
+        <div className="mock-progress-bar"><div className="mock-progress-fill" style={{ width: '50%' }}></div></div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
+          <div style={{ fontSize: '9px', color: '#757575' }}>Last Topic Name<br />Lesson Name</div>
+          <div className="mock-resume-btn">Resume ›</div>
+        </div>
+      </div>
+
+      {/* Today's Tasks */}
+      <div className="mock-card">
+        <div style={{ fontSize: '12px', fontWeight: 700, color: '#212121', marginBottom: '2px' }}>Today's Tasks</div>
+        <div style={{ fontSize: '9px', color: '#999', marginBottom: '8px' }}>Today&apos;s lesson not started yet</div>
+        <div className="mock-stats-grid">
+          <div className="mock-stat-item" style={{ borderColor: 'rgba(0,168,107,0.2)' }}>
+            <div style={{ fontSize: '14px', fontWeight: 800, color: '#00A86B' }}>Present <span style={{ fontSize: '12px' }}>✓</span></div>
+            <div style={{ fontSize: '8px', color: '#757575' }}>Today Attendance</div>
+          </div>
+          <div className="mock-stat-item" style={{ borderColor: 'rgba(0,168,107,0.2)' }}>
+            <div><span style={{ fontSize: '14px', fontWeight: 800, color: '#00A86B' }}>1</span><span style={{ fontSize: '12px', color: '#999' }}> / 5</span></div>
+            <div style={{ fontSize: '8px', color: '#757575' }}>This Week Attended</div>
+          </div>
+          <div className="mock-stat-item" style={{ borderColor: 'rgba(26,115,232,0.2)' }}>
+            <div><span style={{ fontSize: '14px', fontWeight: 800, color: '#1A73E8' }}>0</span><span style={{ fontSize: '12px', color: '#999' }}> / 5</span></div>
+            <div style={{ fontSize: '8px', color: '#757575' }}>Exams Passed</div>
+          </div>
+          <div className="mock-stat-item" style={{ borderColor: 'rgba(245,166,35,0.2)' }}>
+            <div style={{ fontSize: '14px', fontWeight: 800, color: '#F5A623' }}>0 Done</div>
+            <div style={{ fontSize: '8px', color: '#757575' }}>Speaking Task</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Actions */}
+      <div style={{ padding: '0 12px', marginBottom: '10px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+          <span style={{ fontSize: '11px', fontWeight: 600, color: '#212121' }}>Quick Actions</span>
+          <span style={{ fontSize: '10px', color: '#999' }}>4</span>
+        </div>
+        <div className="mock-qa-grid">
+          <div className="mock-qa-btn"><span>📹</span> Live Class</div>
+          <div className="mock-qa-btn"><span>📚</span> Courses</div>
+          <div className="mock-qa-btn"><span>🏆</span> Certificate</div>
+          <div className="mock-qa-btn"><span>📊</span> Analytics</div>
+        </div>
+      </div>
+
+      {/* Bottom Nav */}
+      <div className="mock-bottom-nav">
+        <div className="mock-nav-item mock-nav-active">🏠<span>Home</span></div>
+        <div className="mock-nav-item">📹<span>Lectures</span></div>
+        <div className="mock-nav-item">💬<span>Practice</span></div>
+        <div className="mock-nav-item">📝<span>Tasks</span></div>
+        <div className="mock-nav-item">📋<span>Exams</span></div>
+      </div>
     </div>
   )
 }
