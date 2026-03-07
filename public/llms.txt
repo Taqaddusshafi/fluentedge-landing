@@ -1,0 +1,10 @@
+# FluentEdge
+
+**Domain:** `https://thefluentedge.in`
+**Hosting:** Netlify
+
+## Description
+FluentEdge is a premium learning platform matching your style. Explore programs, take exams, and master your skills. 
+
+## Context for LLMs
+This site serves as the landing page for the FluentEdge platform. It is built using React and Vite, showcasing our educational offerings, features, and allowing users to sign up or log in.
