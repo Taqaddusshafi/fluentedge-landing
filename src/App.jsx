@@ -181,20 +181,48 @@ function App() {
 
       {/* ── Footer ──────────────────────────────────────────── */}
       <footer className="footer">
-        <div className="container footer-inner">
-          <div className="logo">
-            <svg className="logo-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="29" viewBox="0 0 82 100" fill="none"><path d="M0.761078 27.6596C3.03055 8.65248 18.8462 0 27.7115 0H81.2576C81.2576 19.0071 68.2884 22.104 61.5508 23.0496C58.0129 23.5462 47.721 23.0496 42.7565 23.0496C37.7919 23.0496 31.1783 22.695 27.1536 24.8227C23.129 26.9504 23.6075 31.5603 23.6075 31.5603C23.6075 31.5603 23.9347 38.6525 29.2538 38.6525C11.878 41.1348 4.18899 55.6738 0.761078 63.1206V27.6596Z" fill="url(#fA)" /><path d="M1.42485 80.8511C5.84961 65.2482 21.4524 64.1844 31.0269 64.1844H44.8567C67.0376 64.1844 70.08 43.6853 69.3759 37.5887L28.8993 38.6525C20.9896 38.6525 4.88102 45.8744 0.885069 61.7021C0.175847 66.3121 0.579864 75.7862 1.42485 80.8511Z" fill="url(#fB)" /><path d="M0.746944 99.8556C11.5912 101.03 32.7259 95.5591 30.5109 64.286C18.6155 63.4752 -4.43414 66.6667 0.746944 99.8556Z" fill="url(#fC)" /><defs><linearGradient id="fA" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0077FF" /><stop offset="1" stopColor="#003470" /></linearGradient><linearGradient id="fB" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0079FF" /><stop offset="1" stopColor="#0058B8" /></linearGradient><linearGradient id="fC" x1="15.4" y1="64.2" x2="15.4" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#FE6201" /><stop offset="1" stopColor="#FF6200" /></linearGradient></defs></svg>
-            <span className="logo-text">luent<span className="logo-accent">Edge</span></span>
+        <div className="container">
+          <div className="footer-top">
+            <div className="footer-brand">
+              <div className="logo">
+                <svg className="logo-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="29" viewBox="0 0 82 100" fill="none"><path d="M0.761078 27.6596C3.03055 8.65248 18.8462 0 27.7115 0H81.2576C81.2576 19.0071 68.2884 22.104 61.5508 23.0496C58.0129 23.5462 47.721 23.0496 42.7565 23.0496C37.7919 23.0496 31.1783 22.695 27.1536 24.8227C23.129 26.9504 23.6075 31.5603 23.6075 31.5603C23.6075 31.5603 23.9347 38.6525 29.2538 38.6525C11.878 41.1348 4.18899 55.6738 0.761078 63.1206V27.6596Z" fill="url(#fA)" /><path d="M1.42485 80.8511C5.84961 65.2482 21.4524 64.1844 31.0269 64.1844H44.8567C67.0376 64.1844 70.08 43.6853 69.3759 37.5887L28.8993 38.6525C20.9896 38.6525 4.88102 45.8744 0.885069 61.7021C0.175847 66.3121 0.579864 75.7862 1.42485 80.8511Z" fill="url(#fB)" /><path d="M0.746944 99.8556C11.5912 101.03 32.7259 95.5591 30.5109 64.286C18.6155 63.4752 -4.43414 66.6667 0.746944 99.8556Z" fill="url(#fC)" /><defs><linearGradient id="fA" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0077FF" /><stop offset="1" stopColor="#003470" /></linearGradient><linearGradient id="fB" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0079FF" /><stop offset="1" stopColor="#0058B8" /></linearGradient><linearGradient id="fC" x1="15.4" y1="64.2" x2="15.4" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#FE6201" /><stop offset="1" stopColor="#FF6200" /></linearGradient></defs></svg>
+                <span className="logo-text">luent<span className="logo-accent">Edge</span></span>
+              </div>
+              <p className="footer-tagline">Your English Learning Journey Starts Here.</p>
+            </div>
+
+            <div className="footer-support">
+              <h4>Need Support?</h4>
+              <p>For any issues or information, feel free to contact us.</p>
+              <div className="footer-emails">
+                <a href="mailto:support@thefluentedge.in" className="support-email">
+                  <div className="support-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <div className="email-text">
+                    <span className="email-label">Support</span>
+                    <span>support@thefluentedge.in</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div className="footer-links-col">
+              <h4>Quick Links</h4>
+              <nav className="footer-nav">
+                <a href="#features">Features</a>
+                <a href="#programs">Programs</a>
+                <a href="#how-it-works">How It Works</a>
+              </nav>
+            </div>
           </div>
 
-          <div className="footer-contact">
-            <a href="mailto:support@thefluentedge.in" className="support-email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              support@thefluentedge.in
-            </a>
+          <div className="footer-bottom">
+            <p>© {new Date().getFullYear()} FluentEdge. All rights reserved.</p>
+            <p className="footer-credit">
+              Designed & Developed with <span className="heart">❤️</span> by <a href="https://hitechglobals.com" target="_blank" rel="noreferrer">HiTechGlobals</a>
+            </p>
           </div>
-
-          <p>© {new Date().getFullYear()} FluentEdge. All rights reserved.</p>
         </div>
       </footer>
     </div>
