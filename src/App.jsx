@@ -9,7 +9,17 @@ function App() {
       <nav className="navbar">
         <div className="container nav-inner">
           <div className="logo">
-            <svg className="logo-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="29" viewBox="0 0 82 100" fill="none"><path d="M0.761078 27.6596C3.03055 8.65248 18.8462 0 27.7115 0H81.2576C81.2576 19.0071 68.2884 22.104 61.5508 23.0496C58.0129 23.5462 47.721 23.0496 42.7565 23.0496C37.7919 23.0496 31.1783 22.695 27.1536 24.8227C23.129 26.9504 23.6075 31.5603 23.6075 31.5603C23.6075 31.5603 23.9347 38.6525 29.2538 38.6525C11.878 41.1348 4.18899 55.6738 0.761078 63.1206V27.6596Z" fill="url(#pA)" /><path d="M1.42485 80.8511C5.84961 65.2482 21.4524 64.1844 31.0269 64.1844H44.8567C67.0376 64.1844 70.08 43.6853 69.3759 37.5887L28.8993 38.6525C20.9896 38.6525 4.88102 45.8744 0.885069 61.7021C0.175847 66.3121 0.579864 75.7862 1.42485 80.8511Z" fill="url(#pB)" /><path d="M0.746944 99.8556C11.5912 101.03 32.7259 95.5591 30.5109 64.286C18.6155 63.4752 -4.43414 66.6667 0.746944 99.8556Z" fill="url(#pC)" /><defs><linearGradient id="pA" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0077FF" /><stop offset="1" stopColor="#003470" /></linearGradient><linearGradient id="pB" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0079FF" /><stop offset="1" stopColor="#0058B8" /></linearGradient><linearGradient id="pC" x1="15.4" y1="64.2" x2="15.4" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#FE6201" /><stop offset="1" stopColor="#FF6200" /></linearGradient></defs></svg>
+            <svg className="logo-icon" aria-label="FluentEdge Logo" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="29" viewBox="0 0 82 100" fill="none">
+              <title>FluentEdge Logo</title>
+              <path d="M0.761078 27.6596C3.03055 8.65248 18.8462 0 27.7115 0H81.2576C81.2576 19.0071 68.2884 22.104 61.5508 23.0496C58.0129 23.5462 47.721 23.0496 42.7565 23.0496C37.7919 23.0496 31.1783 22.695 27.1536 24.8227C23.129 26.9504 23.6075 31.5603 23.6075 31.5603C23.6075 31.5603 23.9347 38.6525 29.2538 38.6525C11.878 41.1348 4.18899 55.6738 0.761078 63.1206V27.6596Z" fill="url(#pA)" />
+              <path d="M1.42485 80.8511C5.84961 65.2482 21.4524 64.1844 31.0269 64.1844H44.8567C67.0376 64.1844 70.08 43.6853 69.3759 37.5887L28.8993 38.6525C20.9896 38.6525 4.88102 45.8744 0.885069 61.7021C0.175847 66.3121 0.579864 75.7862 1.42485 80.8511Z" fill="url(#pB)" />
+              <path d="M0.746944 99.8556C11.5912 101.03 32.7259 95.5591 30.5109 64.286C18.6155 63.4752 -4.43414 66.6667 0.746944 99.8556Z" fill="url(#pC)" />
+              <defs>
+                <linearGradient id="pA" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0077FF" /><stop offset="1" stopColor="#003470" /></linearGradient>
+                <linearGradient id="pB" x1="40.6" y1="0" x2="40.6" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#0079FF" /><stop offset="1" stopColor="#0058B8" /></linearGradient>
+                <linearGradient id="pC" x1="15.4" y1="64.2" x2="15.4" y2="100" gradientUnits="userSpaceOnUse"><stop stopColor="#FE6201" /><stop offset="1" stopColor="#FF6200" /></linearGradient>
+              </defs>
+            </svg>
             <span className="logo-text">luent<span className="logo-accent">Edge</span></span>
           </div>
           <div className="nav-links">
@@ -17,12 +27,11 @@ function App() {
             <a href="#programs">Programs</a>
             <a href="#how-it-works">How It Works</a>
             <a href={PLAYSTORE_URL} className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92ZM14.852 13.06l2.8 1.62-9.381 5.42 6.58-7.04ZM17.652 9.32l-2.8 1.62-6.58-7.04 9.38 5.42ZM19.158 10.19l2.39 1.38a1 1 0 0 1 0 1.74l-2.39 1.38-3.1-2.25 3.1-2.25Z" /></svg>
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92ZM14.852 13.06l2.8 1.62-9.381 5.42 6.58-7.04ZM17.652 9.32l-2.8 1.62-6.58-7.04 9.38 5.42ZM19.158 10.19l2.39 1.38a1 1 0 0 1 0 1.74l-2.39 1.38-3.1-2.25 3.1-2.25Z" /></svg>
               Get the App
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <button className="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" onClick={() => {
             document.querySelector('.nav-links').classList.toggle('nav-open')
           }}>
@@ -31,153 +40,157 @@ function App() {
         </div>
       </nav>
 
-      {/* ── Hero ────────────────────────────────────────────── */}
-      <section className="hero">
-        <div className="hero-glow"></div>
-        <div className="container hero-grid">
-          <div className="hero-text">
-            <div className="badge">🚀 Your English Learning Journey Starts Here</div>
-            <h1>Learn English the <span className="text-gradient">Smart Way</span></h1>
-            <p className="hero-subtitle">
-              FluentEdge is a premium mobile learning platform with live classes,
-              interactive tasks, AI-powered speaking practice, and real-time progress tracking
-              — all designed to make you fluent, faster.
-            </p>
-            <div className="hero-actions">
-              <a href={PLAYSTORE_URL} className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92ZM14.852 13.06l2.8 1.62-9.381 5.42 6.58-7.04ZM17.652 9.32l-2.8 1.62-6.58-7.04 9.38 5.42ZM19.158 10.19l2.39 1.38a1 1 0 0 1 0 1.74l-2.39 1.38-3.1-2.25 3.1-2.25Z" /></svg>
-                Download on Play Store
-              </a>
+      <main>
+
+        {/* ── Hero ────────────────────────────────────────────── */}
+        <section className="hero">
+          <div className="hero-glow"></div>
+          <div className="container hero-grid">
+            <div className="hero-text">
+              <div className="badge">🚀 Your English Learning Journey Starts Here</div>
+              <h1>Learn English the <span className="text-gradient">Smart Way</span></h1>
+              <p className="hero-subtitle">
+                FluentEdge is a premium mobile learning platform with live classes,
+                interactive tasks, AI-powered speaking practice, and real-time progress tracking
+                — all designed to make you fluent, faster.
+              </p>
+              <div className="hero-actions">
+                <a href={PLAYSTORE_URL} className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
+                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92ZM14.852 13.06l2.8 1.62-9.381 5.42 6.58-7.04ZM17.652 9.32l-2.8 1.62-6.58-7.04 9.38 5.42ZM19.158 10.19l2.39 1.38a1 1 0 0 1 0 1.74l-2.39 1.38-3.1-2.25 3.1-2.25Z" /></svg>
+                  Download on Play Store
+                </a>
+              </div>
+              <div className="hero-stats">
+                <div className="stat"><strong>500+</strong><span>Active Learners</span></div>
+                <div className="stat-divider"></div>
+                <div className="stat"><strong>3</strong><span>Program Levels</span></div>
+                <div className="stat-divider"></div>
+                <div className="stat"><strong>4.8★</strong><span>User Rating</span></div>
+              </div>
             </div>
-            <div className="hero-stats">
-              <div className="stat"><strong>500+</strong><span>Active Learners</span></div>
-              <div className="stat-divider"></div>
-              <div className="stat"><strong>3</strong><span>Program Levels</span></div>
-              <div className="stat-divider"></div>
-              <div className="stat"><strong>4.8★</strong><span>User Rating</span></div>
-            </div>
-          </div>
-          <div className="hero-visual">
-            <div className="phone-frame">
-              <div className="phone-screen">
-                <PhoneDashboard />
+            <div className="hero-visual">
+              <div className="phone-frame">
+                <div className="phone-screen">
+                  <PhoneDashboard />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── Features ────────────────────────────────────────── */}
-      <section className="section section-alt" id="features">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Features</span>
-            <h2>Everything You Need to <span className="text-gradient">Get Fluent</span></h2>
-            <p>A comprehensive learning experience crafted to match your pace and style.</p>
+        {/* ── Features ────────────────────────────────────────── */}
+        <section className="section section-alt" id="features">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-badge">Features</span>
+              <h2>Everything You Need to <span className="text-gradient">Get Fluent</span></h2>
+              <p>A comprehensive learning experience crafted to match your pace and style.</p>
+            </div>
+
+            <div className="features-grid">
+              <FeatureCard
+                icon="📚"
+                title="Daily Content"
+                desc="Word, Vocab & Sentence of the Day — learn something new every single morning."
+                color="var(--color-primary)"
+              />
+              <FeatureCard
+                icon="🎙️"
+                title="Speaking Practice"
+                desc="Record and submit speaking tasks to improve pronunciation and fluency."
+                color="#E67E22"
+              />
+              <FeatureCard
+                icon="📹"
+                title="Live Classes"
+                desc="Join scheduled live classes with your instructor for real-time interaction."
+                color="var(--color-secondary)"
+              />
+              <FeatureCard
+                icon="📝"
+                title="Exams & Assessments"
+                desc="Take timed exams, get graded instantly, and track your improvement."
+                color="#7C3AED"
+              />
+              <FeatureCard
+                icon="📊"
+                title="Progress Analytics"
+                desc="XP, streaks, attendance, and detailed performance dashboards at a glance."
+                color="var(--color-primary)"
+              />
+              <FeatureCard
+                icon="🏆"
+                title="Certificates"
+                desc="Earn a verified certificate upon completing your program successfully."
+                color="#00A86B"
+              />
+            </div>
           </div>
+        </section>
 
-          <div className="features-grid">
-            <FeatureCard
-              icon="📚"
-              title="Daily Content"
-              desc="Word, Vocab & Sentence of the Day — learn something new every single morning."
-              color="var(--color-primary)"
-            />
-            <FeatureCard
-              icon="🎙️"
-              title="Speaking Practice"
-              desc="Record and submit speaking tasks to improve pronunciation and fluency."
-              color="#E67E22"
-            />
-            <FeatureCard
-              icon="📹"
-              title="Live Classes"
-              desc="Join scheduled live classes with your instructor for real-time interaction."
-              color="var(--color-secondary)"
-            />
-            <FeatureCard
-              icon="📝"
-              title="Exams & Assessments"
-              desc="Take timed exams, get graded instantly, and track your improvement."
-              color="#7C3AED"
-            />
-            <FeatureCard
-              icon="📊"
-              title="Progress Analytics"
-              desc="XP, streaks, attendance, and detailed performance dashboards at a glance."
-              color="var(--color-primary)"
-            />
-            <FeatureCard
-              icon="🏆"
-              title="Certificates"
-              desc="Earn a verified certificate upon completing your program successfully."
-              color="#00A86B"
-            />
+        {/* ── Programs ────────────────────────────────────────── */}
+        <section className="section" id="programs">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-badge">Programs</span>
+              <h2>Choose Your <span className="text-gradient">Level</span></h2>
+              <p>Three structured programs designed for every stage of your English journey.</p>
+            </div>
+
+            <div className="programs-grid">
+              <ProgramCard
+                level="Beginner"
+                icon="🚀"
+                gradient="linear-gradient(135deg, #1A73E8, #2196F3)"
+                features={['Basic grammar & vocabulary', 'Simple speaking tasks', 'Guided daily content', 'Foundation building']}
+              />
+              <ProgramCard
+                level="Intermediate"
+                icon="📈"
+                gradient="linear-gradient(135deg, #00A86B, #4CAF50)"
+                features={['Advanced grammar patterns', 'Conversation practice', 'Writing assignments', 'Exam preparation']}
+                popular
+              />
+              <ProgramCard
+                level="Advanced"
+                icon="⭐"
+                gradient="linear-gradient(135deg, #7C3AED, #AB47BC)"
+                features={['Fluency-level exercises', 'Professional speaking', 'Complex writing tasks', 'Certification exam']}
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── Programs ────────────────────────────────────────── */}
-      <section className="section" id="programs">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Programs</span>
-            <h2>Choose Your <span className="text-gradient">Level</span></h2>
-            <p>Three structured programs designed for every stage of your English journey.</p>
+        {/* ── How It Works ────────────────────────────────────── */}
+        <section className="section section-alt" id="how-it-works">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-badge">How It Works</span>
+              <h2>Start Learning in <span className="text-gradient">3 Steps</span></h2>
+            </div>
+
+            <div className="steps-grid">
+              <StepCard number="1" title="Download the App" desc="Get FluentEdge from the Google Play Store and create your free account." />
+              <StepCard number="2" title="Choose a Program" desc="Pick Beginner, Intermediate, or Advanced based on your current level." />
+              <StepCard number="3" title="Start Learning" desc="Attend live classes, complete daily tasks, and watch yourself improve." />
+            </div>
           </div>
+        </section>
 
-          <div className="programs-grid">
-            <ProgramCard
-              level="Beginner"
-              icon="🚀"
-              gradient="linear-gradient(135deg, #1A73E8, #2196F3)"
-              features={['Basic grammar & vocabulary', 'Simple speaking tasks', 'Guided daily content', 'Foundation building']}
-            />
-            <ProgramCard
-              level="Intermediate"
-              icon="📈"
-              gradient="linear-gradient(135deg, #00A86B, #4CAF50)"
-              features={['Advanced grammar patterns', 'Conversation practice', 'Writing assignments', 'Exam preparation']}
-              popular
-            />
-            <ProgramCard
-              level="Advanced"
-              icon="⭐"
-              gradient="linear-gradient(135deg, #7C3AED, #AB47BC)"
-              features={['Fluency-level exercises', 'Professional speaking', 'Complex writing tasks', 'Certification exam']}
-            />
+        {/* ── Final CTA ───────────────────────────────────────── */}
+        <section className="cta-section">
+          <div className="cta-glow"></div>
+          <div className="container cta-inner">
+            <h2>Ready to Become Fluent?</h2>
+            <p>Download FluentEdge today and take the first step towards English fluency.</p>
+            <a href={PLAYSTORE_URL} className="btn btn-white btn-lg" target="_blank" rel="noreferrer">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92ZM14.852 13.06l2.8 1.62-9.381 5.42 6.58-7.04ZM17.652 9.32l-2.8 1.62-6.58-7.04 9.38 5.42ZM19.158 10.19l2.39 1.38a1 1 0 0 1 0 1.74l-2.39 1.38-3.1-2.25 3.1-2.25Z" /></svg>
+              Download on Play Store
+            </a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── How It Works ────────────────────────────────────── */}
-      <section className="section section-alt" id="how-it-works">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">How It Works</span>
-            <h2>Start Learning in <span className="text-gradient">3 Steps</span></h2>
-          </div>
-
-          <div className="steps-grid">
-            <StepCard number="1" title="Download the App" desc="Get FluentEdge from the Google Play Store and create your free account." />
-            <StepCard number="2" title="Choose a Program" desc="Pick Beginner, Intermediate, or Advanced based on your current level." />
-            <StepCard number="3" title="Start Learning" desc="Attend live classes, complete daily tasks, and watch yourself improve." />
-          </div>
-        </div>
-      </section>
-
-      {/* ── Final CTA ───────────────────────────────────────── */}
-      <section className="cta-section">
-        <div className="cta-glow"></div>
-        <div className="container cta-inner">
-          <h2>Ready to Become Fluent?</h2>
-          <p>Download FluentEdge today and take the first step towards English fluency.</p>
-          <a href={PLAYSTORE_URL} className="btn btn-white btn-lg" target="_blank" rel="noreferrer">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92ZM14.852 13.06l2.8 1.62-9.381 5.42 6.58-7.04ZM17.652 9.32l-2.8 1.62-6.58-7.04 9.38 5.42ZM19.158 10.19l2.39 1.38a1 1 0 0 1 0 1.74l-2.39 1.38-3.1-2.25 3.1-2.25Z" /></svg>
-            Download on Play Store
-          </a>
-        </div>
-      </section>
+      </main>
 
       {/* ── Footer ──────────────────────────────────────────── */}
       <footer className="footer">
@@ -234,7 +247,7 @@ function App() {
 function FeatureCard({ icon, title, desc, color }) {
   return (
     <div className="feature-card">
-      <div className="feature-icon" style={{ background: `${color}14`, color }}>{icon}</div>
+      <div className="feature-icon" style={{ background: `${color}14`, color }} aria-hidden="true">{icon}</div>
       <h3>{title}</h3>
       <p>{desc}</p>
     </div>
@@ -246,7 +259,7 @@ function ProgramCard({ level, icon, gradient, features, popular }) {
     <div className={`program-card ${popular ? 'program-popular' : ''}`}>
       {popular && <div className="popular-badge">Most Popular</div>}
       <div className="program-header" style={{ background: gradient }}>
-        <span className="program-icon">{icon}</span>
+        <span className="program-icon" aria-hidden="true">{icon}</span>
         <h3>{level}</h3>
       </div>
       <ul className="program-features">
