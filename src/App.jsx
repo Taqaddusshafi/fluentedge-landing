@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { useEffect } from 'react'
 import './index.css'
 import PrivacyPolicy from './PrivacyPolicy'
+import DataDeletion from './DataDeletion'
+import Terms from './Terms'
+import Refund from './Refund'
 
 const PLAYSTORE_URL = 'https://play.google.com/store/apps/details?id=com.fluentedge.app'
 
@@ -48,6 +51,9 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/data-deletion" element={<DataDeletion />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/refund-policy" element={<Refund />} />
         </Routes>
 
         {/* ── Footer ──────────────────────────────────────────── */}
@@ -85,6 +91,9 @@ function App() {
                   <NavHashLink to="/#programs">Programs</NavHashLink>
                   <NavHashLink to="/#how-it-works">How It Works</NavHashLink>
                   <Link to="/privacy">Privacy Policy</Link>
+                  <Link to="/terms">Terms & Conditions</Link>
+                  <Link to="/refund-policy">Refund & Cancellation</Link>
+                  <Link to="/data-deletion">Data Deletion Request</Link>
                 </nav>
               </div>
             </div>

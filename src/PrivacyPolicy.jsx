@@ -34,6 +34,7 @@ const PrivacyPolicy = () => {
               <li style={{ marginBottom: '8px' }}><strong>Personal Identifiers:</strong> Name, email address, and mobile number.</li>
               <li style={{ marginBottom: '8px' }}><strong>Credentials:</strong> We use Google Sign-In for authentication. We do not store your Google password; we only receive an identity token to verify your account.</li>
               <li style={{ marginBottom: '8px' }}><strong>App Usage Data:</strong> Information about your progress, task submissions, exam results, and attendance to provide personalized learning analytics.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Payment Information:</strong> When you purchase a program, we use Razorpay as our payment processor. We do not store your full credit card or bank details on our servers. Razorpay collects your payment information directly. We only store transaction-related data (such as Razorpay Order ID and Payment ID) to verify your purchase and manage your subscription.</li>
             </ul>
           </section>
 
