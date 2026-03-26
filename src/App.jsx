@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import './index.css'
 import PrivacyPolicy from './PrivacyPolicy'
@@ -54,7 +54,10 @@ function App() {
           <Route path="/data-deletion" element={<DataDeletion />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/refund-policy" element={<Refund />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+
+
 
         {/* ── Footer ──────────────────────────────────────────── */}
         <footer className="footer">
