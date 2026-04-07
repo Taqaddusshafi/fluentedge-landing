@@ -179,8 +179,12 @@ export default function Enroll() {
       }
 
       // Diagnostic check exactly for the issue
+      if (!data.backend_key_prefix) {
+        throw new Error(`SYSTEM ERROR: The edge function did not return a key prefix! This means you did NOT deploy the latest edge function. Open your terminal and run: npx supabase functions deploy create-razorpay-order`);
+      }
+
       const frontendPrefix = RAZORPAY_KEY.substring(0, 12);
-      if (data.backend_key_prefix && data.backend_key_prefix !== frontendPrefix) {
+      if (data.backend_key_prefix !== frontendPrefix) {
         throw new Error(`CRITICAL MISMATCH: Netlify key starts with ${frontendPrefix} but Supabase Edge Function used a key starting with ${data.backend_key_prefix}. The Live/Test keys must match exactly!`);
       }
 
