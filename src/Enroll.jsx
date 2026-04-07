@@ -5,12 +5,6 @@ const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY;
 
-console.log("Debug Variables (should not be undefined):", {
-  url: SUPABASE_URL ? "Loaded" : "Missing",
-  anon: SUPABASE_ANON_KEY ? "Loaded" : "Missing",
-  rzp: RAZORPAY_KEY ? "Loaded" : "Missing"
-});
-
 const FALLBACK_PROGRAMS = [
   { id: 'beginner', name: 'Beginner', price: 999, original_price: 1999 },
   { id: 'intermediate', name: 'Intermediate', price: 1499, original_price: 2499 },
@@ -176,16 +170,6 @@ export default function Enroll() {
 
       if (!res.ok) {
         throw new Error(data.error || 'Failed to create order');
-      }
-
-      // Diagnostic check exactly for the issue
-      if (!data.backend_key_prefix) {
-        throw new Error(`SYSTEM ERROR: The edge function did not return a key prefix! This means you did NOT deploy the latest edge function. Open your terminal and run: npx supabase functions deploy create-razorpay-order`);
-      }
-
-      const frontendPrefix = RAZORPAY_KEY.substring(0, 12);
-      if (data.backend_key_prefix !== frontendPrefix) {
-        throw new Error(`CRITICAL MISMATCH: Netlify key starts with ${frontendPrefix} but Supabase Edge Function used a key starting with ${data.backend_key_prefix}. The Live/Test keys must match exactly!`);
       }
 
       // Step 4: Open Razorpay Checkout
