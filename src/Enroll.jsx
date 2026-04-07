@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const SUPABASE_URL = 'https://druufvtllfyhnoahzegy.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRydXVmdnRsbGZ5aG5vYWh6ZWd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2Mjk5MjQsImV4cCI6MjA5MDIwNTkyNH0.mvCOg2G6U2gXNRH3Uk_Lm38y4DRKl3FUTZgqP8fnpiM';
-const RAZORPAY_KEY = 'rzp_live_SVkyZRxoETSHl0'; // From user's .env
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY; 
 
 const FALLBACK_PROGRAMS = [
   { id: 'beginner', name: 'Beginner', price: 999, original_price: 1999 },
