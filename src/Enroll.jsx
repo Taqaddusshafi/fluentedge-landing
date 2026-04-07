@@ -178,6 +178,12 @@ export default function Enroll() {
         throw new Error(data.error || 'Failed to create order');
       }
 
+      // Diagnostic check exactly for the issue
+      const frontendPrefix = RAZORPAY_KEY.substring(0, 12);
+      if (data.backend_key_prefix && data.backend_key_prefix !== frontendPrefix) {
+        throw new Error(`CRITICAL MISMATCH: Netlify key starts with ${frontendPrefix} but Supabase Edge Function used a key starting with ${data.backend_key_prefix}. The Live/Test keys must match exactly!`);
+      }
+
       // Step 4: Open Razorpay Checkout
       const options = {
         key: RAZORPAY_KEY,
