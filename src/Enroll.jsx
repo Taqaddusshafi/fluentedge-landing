@@ -37,6 +37,7 @@ export default function Enroll() {
   const [pageLoading, setPageLoading] = useState(true);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const [verifiedProfile, setVerifiedProfile] = useState(null);
 
   useEffect(() => {
     const fetchPrograms = async () => {
@@ -82,7 +83,10 @@ export default function Enroll() {
     try {
       const response = await fetch(`${SUPABASE_URL}/functions/v1/verify-user`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        },
         body: JSON.stringify({ phone, email })
       });
       const data = await response.json();
@@ -92,7 +96,7 @@ export default function Enroll() {
     }
   };
 
-  const handleEnroll = async (e) => {
+  const handleVerify = async (e) => {
     e.preventDefault();
     if (!name || !phone || !email) {
       setError('Please fill in your name, email, and phone number.');
@@ -102,7 +106,7 @@ export default function Enroll() {
       setError('Please enter a valid phone number.');
       return;
     }
-
+    
     setLoading(true);
     setError('');
 
@@ -116,12 +120,22 @@ export default function Enroll() {
     }
     
     if (!verification.exists) {
-      setError('Account not found. Please log in or create an account in the FluentEdge app first before proceeding with payment.');
+      setError('No details found! Please log in or create an account in the FluentEdge app first before proceeding with payment.');
       setLoading(false);
       return;
     }
 
-    const verifiedStudentId = verification.profile?.id;
+    setVerifiedProfile(verification.profile);
+    setLoading(false);
+  };
+
+  const handlePayment = async (e) => {
+    e.preventDefault();
+    
+    if (!verifiedProfile) return;
+
+    setLoading(true);
+    setError('');
 
     // Step 2: Load Razorpay
     const isLoaded = await loadRazorpay();
@@ -137,12 +151,13 @@ export default function Enroll() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
         },
         body: JSON.stringify({
           amount: selectedProgram.price,
           receipt: `rcpt_${phone}_${Date.now().toString().slice(-6)}`,
           notes: {
-            student_id: verifiedStudentId,
+            student_id: verifiedProfile.id,
             program_level: selectedProgram.id,
             student_name: name,
             phone: phone
@@ -276,7 +291,14 @@ export default function Enroll() {
               </div>
             )}
 
-            <form onSubmit={handleEnroll}>
+            {verifiedProfile && (
+              <div style={{ background: '#F0FFF4', color: '#008A27', padding: '12px 16px', borderRadius: '8px', marginBottom: 24, fontSize: 14, fontWeight: 600, border: '1px solid #C6F6D5', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Details Matched! Account Found.
+              </div>
+            )}
+
+            <form onSubmit={verifiedProfile ? handlePayment : handleVerify}>
               <div style={{ marginBottom: 20 }}>
                 <label style={{ display: 'block', marginBottom: 8, fontSize: 14, fontWeight: 600, color: 'var(--text-1)' }}>Registered Full Name</label>
                 <input 
@@ -284,7 +306,8 @@ export default function Enroll() {
                   value={name}
                   onChange={e => setName(e.target.value)}
                   placeholder="Enter your full name"
-                  style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)' }}
+                  disabled={!!verifiedProfile}
+                  style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent' }}
                 />
               </div>
 
@@ -295,7 +318,8 @@ export default function Enroll() {
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="example@gmail.com"
-                  style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)' }}
+                  disabled={!!verifiedProfile}
+                  style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent' }}
                 />
               </div>
 
@@ -310,7 +334,8 @@ export default function Enroll() {
                     value={phone}
                     onChange={e => setPhone(e.target.value.replace(/\D/g, '').substring(0, 10))}
                     placeholder="Enter 10-digit number"
-                    style={{ flex: 1, padding: '12px 16px', borderRadius: '0 8px 8px 0', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)' }}
+                    disabled={!!verifiedProfile}
+                    style={{ flex: 1, padding: '12px 16px', borderRadius: '0 8px 8px 0', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent' }}
                   />
                 </div>
               </div>
@@ -320,14 +345,34 @@ export default function Enroll() {
                 <span style={{ fontSize: 28, fontWeight: 800, color: 'var(--text-1)' }}>₹{selectedProgram?.price}</span>
               </div>
 
-              <button 
-                type="submit" 
-                className="btn btn-primary btn-block" 
-                disabled={loading}
-                style={{ justifyContent: 'center', padding: '16px', fontSize: 18 }}
-              >
-                {loading ? 'Verifying Account & Processing...' : `Pay ₹${selectedProgram?.price} Securely`}
-              </button>
+              {!verifiedProfile ? (
+                 <button 
+                   type="submit" 
+                   className="btn btn-outline btn-block" 
+                   disabled={loading}
+                   style={{ justifyContent: 'center', padding: '16px', fontSize: 16, borderWidth: '2px', borderColor: 'var(--color-primary)' }}
+                 >
+                   {loading ? 'Searching...' : '1. Verify Detail Match'}
+                 </button>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <button 
+                    type="submit" 
+                    className="btn btn-primary btn-block" 
+                    disabled={loading}
+                    style={{ justifyContent: 'center', padding: '16px', fontSize: 18 }}
+                  >
+                    {loading ? 'Processing...' : `2. Pay ₹${selectedProgram?.price} Securely`}
+                  </button>
+                  <button 
+                    type="button" 
+                    onClick={() => setVerifiedProfile(null)}
+                    style={{ background: 'none', border: 'none', color: 'var(--color-primary)', textDecoration: 'underline', cursor: 'pointer', fontSize: 14 }}
+                  >
+                    Change Details
+                  </button>
+                </div>
+              )}
               
               <div style={{ textAlign: 'center', marginTop: 16, fontSize: 12, color: 'var(--text-3)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
