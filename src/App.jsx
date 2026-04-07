@@ -5,6 +5,7 @@ import PrivacyPolicy from './PrivacyPolicy'
 import DataDeletion from './DataDeletion'
 import Terms from './Terms'
 import Refund from './Refund'
+import Enroll from './Enroll'
 
 const PLAYSTORE_URL = 'https://play.google.com/store/apps/details?id=com.fluentedge.app'
 
@@ -34,6 +35,9 @@ function App() {
               <NavHashLink to="/#features">Features</NavHashLink>
               <NavHashLink to="/#programs">Programs</NavHashLink>
               <NavHashLink to="/#how-it-works">How It Works</NavHashLink>
+              <Link to="/enroll" className="btn btn-outline btn-sm">
+                Enroll Now
+              </Link>
               <a href={PLAYSTORE_URL} className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92ZM14.852 13.06l2.8 1.62-9.381 5.42 6.58-7.04ZM17.652 9.32l-2.8 1.62-6.58-7.04 9.38 5.42ZM19.158 10.19l2.39 1.38a1 1 0 0 1 0 1.74l-2.39 1.38-3.1-2.25 3.1-2.25Z" /></svg>
                 Get the App
@@ -50,6 +54,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/enroll" element={<Enroll />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/data-deletion" element={<DataDeletion />} />
           <Route path="/terms" element={<Terms />} />
@@ -329,9 +334,9 @@ function ProgramCard({ level, icon, gradient, features, popular }) {
           </li>
         ))}
       </ul>
-      <a href={PLAYSTORE_URL} className="btn btn-outline btn-block" target="_blank" rel="noreferrer">
+      <Link to={`/enroll?program=${level.toLowerCase()}`} className="btn btn-outline btn-block">
         Get Started
-      </a>
+      </Link>
     </div>
   )
 }
