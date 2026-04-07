@@ -3,7 +3,13 @@ import { useLocation } from 'react-router-dom';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY; 
+const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY;
+
+console.log("Debug Variables (should not be undefined):", {
+  url: SUPABASE_URL ? "Loaded" : "Missing",
+  anon: SUPABASE_ANON_KEY ? "Loaded" : "Missing",
+  rzp: RAZORPAY_KEY ? "Loaded" : "Missing"
+});
 
 const FALLBACK_PROGRAMS = [
   { id: 'beginner', name: 'Beginner', price: 999, original_price: 1999 },
