@@ -1158,3 +1158,64 @@ img {
   font-weight: 700;
   color: #1A73E8;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Enroll page
+   ═══════════════════════════════════════════════════════════ */
+.enroll-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.enroll-programs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.enroll-form-card {
+  background: var(--surface);
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow-sm);
+}
+
+.enroll-success-card {
+  text-align: center;
+  max-width: 520px;
+  padding: 40px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow-md);
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .enroll-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .enroll-programs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .enroll-form-card {
+    padding: 24px 20px;
+  }
+  
+  .enroll-success-card {
+    padding: 24px 20px;
+  }
+
+  .enroll-programs-grid {
+    grid-template-columns: 1fr;
+  }
+}

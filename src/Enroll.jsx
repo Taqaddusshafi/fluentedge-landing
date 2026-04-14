@@ -217,7 +217,7 @@ export default function Enroll() {
   if (success) {
     return (
       <div className="section container" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ textAlign: 'center', maxWidth: 520, padding: 40, background: 'var(--surface)', borderRadius: 'var(--radius)', border: '1px solid var(--divider)', boxShadow: 'var(--shadow-md)' }}>
+        <div className="enroll-success-card">
           <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'var(--color-secondary-light)', color: 'var(--color-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', fontSize: 40 }}>
             ✓
           </div>
@@ -248,9 +248,9 @@ export default function Enroll() {
           <p>Please enter your registered details. We will link your payment directly to your account.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '40px', maxWidth: 900, margin: '0 auto' }}>
+        <div className="enroll-layout">
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+          <div className="enroll-programs-grid">
             {programs.map(prog => (
               <div 
                 key={prog.id}
@@ -281,7 +281,7 @@ export default function Enroll() {
             ))}
           </div>
 
-          <div style={{ background: 'var(--surface)', padding: 32, borderRadius: 'var(--radius)', border: '1px solid var(--divider)', boxShadow: 'var(--shadow-sm)' }}>
+          <div className="enroll-form-card">
             <h3 style={{ fontSize: 20, marginBottom: 8 }}>Student Details</h3>
             <p style={{ fontSize: 13, color: 'var(--text-2)', marginBottom: 24 }}>Your details must match the ones you used to create your FluentEdge account.</p>
             

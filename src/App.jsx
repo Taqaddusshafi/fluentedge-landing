@@ -7,7 +7,7 @@ import Terms from './Terms'
 import Refund from './Refund'
 import Enroll from './Enroll'
 
-const PLAYSTORE_URL = 'https://play.google.com/store/apps/details?id=com.fluentedge.app'
+const PLAYSTORE_URL = 'https://play.google.com/store/apps/details?id=com.fluentedge.fluentedge'
 
 function App() {
   return (
