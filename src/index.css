@@ -964,6 +964,10 @@ img {
     margin: 0 auto 16px;
   }
 
+  .footer-socials {
+    justify-content: center;
+  }
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
