@@ -314,7 +314,7 @@ export default function Enroll() {
                   onChange={e => setName(e.target.value)}
                   placeholder="Enter your full name"
                   disabled={!!verifiedProfile}
-                  style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent' }}
+                  style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent', boxSizing: 'border-box' }}
                 />
               </div>
 
@@ -326,14 +326,14 @@ export default function Enroll() {
                   onChange={e => setEmail(e.target.value)}
                   placeholder="example@gmail.com"
                   disabled={!!verifiedProfile}
-                  style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent' }}
+                  style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent', boxSizing: 'border-box' }}
                 />
               </div>
 
               <div style={{ marginBottom: 24 }}>
                 <label style={{ display: 'block', marginBottom: 8, fontSize: 14, fontWeight: 600, color: 'var(--text-1)' }}>Registered Phone Number</label>
-                <div style={{ display: 'flex', alignItems: 'stretch' }}>
-                  <div style={{ padding: '12px 16px', background: 'var(--bg)', border: '1px solid var(--divider)', borderRight: 'none', borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px', color: 'var(--text-2)', display: 'flex', alignItems: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'stretch', width: '100%' }}>
+                  <div style={{ padding: '12px 12px', background: 'var(--bg)', border: '1px solid var(--divider)', borderRight: 'none', borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px', color: 'var(--text-2)', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
                     +91
                   </div>
                   <input 
@@ -342,7 +342,7 @@ export default function Enroll() {
                     onChange={e => setPhone(e.target.value.replace(/\D/g, '').substring(0, 10))}
                     placeholder="Enter 10-digit number"
                     disabled={!!verifiedProfile}
-                    style={{ flex: 1, padding: '12px 16px', borderRadius: '0 8px 8px 0', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent' }}
+                    style={{ flex: 1, minWidth: 0, padding: '12px 12px', borderRadius: '0 8px 8px 0', border: '1px solid var(--divider)', fontSize: 16, fontFamily: 'var(--font)', backgroundColor: verifiedProfile ? 'var(--bg)' : 'transparent', boxSizing: 'border-box' }}
                   />
                 </div>
               </div>

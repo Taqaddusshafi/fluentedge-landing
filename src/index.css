@@ -1169,6 +1169,7 @@ img {
   gap: 40px;
   max-width: 1000px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .enroll-programs-grid {
@@ -1183,25 +1184,35 @@ img {
   border-radius: var(--radius);
   border: 1px solid var(--divider);
   box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.enroll-form-card input,
+.enroll-form-card button {
+  box-sizing: border-box;
 }
 
 .enroll-success-card {
   text-align: center;
   max-width: 520px;
+  width: 100%;
   padding: 40px;
   background: var(--surface);
   border-radius: var(--radius);
   border: 1px solid var(--divider);
   box-shadow: var(--shadow-md);
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (max-width: 992px) {
   .enroll-layout {
     grid-template-columns: 1fr;
     gap: 32px;
+    max-width: 600px;
   }
-  
+
   .enroll-programs-grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
@@ -1209,20 +1220,37 @@ img {
 
 @media (max-width: 768px) {
   .enroll-layout {
-    max-width: 480px;
+    max-width: 100%;
     margin: 0 auto;
     gap: 24px;
   }
 
   .enroll-form-card {
-    padding: 24px 20px;
+    padding: 24px 16px;
   }
-  
+
   .enroll-success-card {
-    padding: 24px 20px;
+    padding: 24px 16px;
   }
 
   .enroll-programs-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .enroll-form-card {
+    padding: 20px 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  .enroll-form-card input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .enroll-success-card {
+    padding: 20px 14px;
+    border-radius: var(--radius-sm);
   }
 }
