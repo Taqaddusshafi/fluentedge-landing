@@ -6,9 +6,9 @@ const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY;
 
 const FALLBACK_PROGRAMS = [
-  { id: 'beginner', name: 'Beginner', price: 999, original_price: 1999 },
-  { id: 'intermediate', name: 'Intermediate', price: 1499, original_price: 2499 },
-  { id: 'advanced', name: 'Advanced', price: 1999, original_price: 3499 }
+  { id: 'beginner', name: 'Beginner', price: 999, original_price: 1999, description: 'Basic grammar & vocabulary, Simple speaking tasks, Guided daily content' },
+  { id: 'intermediate', name: 'Intermediate', price: 1499, original_price: 2499, description: 'Advanced grammar patterns, Conversation practice, Writing assignments' },
+  { id: 'advanced', name: 'Advanced', price: 1999, original_price: 3499, description: 'Fluency-level exercises, Professional speaking, Complex writing tasks' }
 ];
 
 const loadRazorpay = () => {
@@ -56,7 +56,8 @@ export default function Enroll() {
             name: p.name,
             price: p.price,
             original_price: p.original_price,
-            level: p.level
+            level: p.level,
+            description: p.details || p.course_details || p.course_detail || p.description || ''
           })).sort((a, b) => {
             const order = { beginner: 0, intermediate: 1, advanced: 2 };
             return (order[a.level] || 0) - (order[b.level] || 0);
@@ -273,10 +274,15 @@ export default function Enroll() {
                   </div>
                 )}
                 <h3 style={{ fontSize: 17, marginBottom: 8 }}>{prog.name}</h3>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: prog.description ? 12 : 0 }}>
                   <span style={{ fontSize: 24, fontWeight: 800 }}>₹{prog.price}</span>
                   <span style={{ fontSize: 14, textDecoration: 'line-through', color: 'var(--text-3)' }}>₹{prog.original_price}</span>
                 </div>
+                {prog.description && (
+                  <div style={{ fontSize: 13, color: 'var(--text-2)', lineHeight: 1.5, borderTop: '1px solid var(--divider)', paddingTop: 12 }}>
+                    {prog.description}
+                  </div>
+                )}
               </div>
             ))}
           </div>

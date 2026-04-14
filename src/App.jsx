@@ -10,6 +10,22 @@ import Enroll from './Enroll'
 const PLAYSTORE_URL = 'https://play.google.com/store/apps/details?id=com.fluentedge.fluentedge'
 
 function App() {
+  useEffect(() => {
+    const handleGlobalClick = (e) => {
+      const navLinks = document.querySelector('.nav-links');
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      
+      if (navLinks && mobileBtn && navLinks.classList.contains('nav-open')) {
+        // Close if clicking outside the menu, or if clicking a link/button inside
+        if ((!navLinks.contains(e.target) && !mobileBtn.contains(e.target)) || e.target.closest('a')) {
+          navLinks.classList.remove('nav-open');
+        }
+      }
+    };
+    document.addEventListener('click', handleGlobalClick);
+    return () => document.removeEventListener('click', handleGlobalClick);
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
