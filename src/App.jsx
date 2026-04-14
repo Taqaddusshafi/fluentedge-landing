@@ -14,7 +14,7 @@ function App() {
     const handleGlobalClick = (e) => {
       const navLinks = document.querySelector('.nav-links');
       const mobileBtn = document.querySelector('.mobile-menu-btn');
-      
+
       if (navLinks && mobileBtn && navLinks.classList.contains('nav-open')) {
         // Close if clicking outside the menu, or if clicking a link/button inside
         if ((!navLinks.contains(e.target) && !mobileBtn.contains(e.target)) || e.target.closest('a')) {
@@ -308,8 +308,8 @@ function ScrollToTop() {
 
 function NavHashLink({ to, children, ...props }) {
   return (
-    <Link 
-      to={to} 
+    <Link
+      to={to}
       onClick={() => {
         if (window.innerWidth <= 992) {
           document.querySelector('.nav-links').classList.remove('nav-open');
@@ -386,7 +386,7 @@ function PhoneDashboard() {
           <div className="mock-avatar">👤</div>
           <div>
             <div style={{ fontSize: '10px', color: '#757575' }}>Welcome,</div>
-            <div style={{ fontSize: '13px', fontWeight: 700, color: '#212121' }}>Muhammad Shaaz</div>
+            <div style={{ fontSize: '13px', fontWeight: 700, color: '#212121' }}>User</div>
           </div>
         </div>
         <div className="mock-notif">🔔<span className="mock-notif-dot">2</span></div>
