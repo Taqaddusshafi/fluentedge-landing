@@ -265,7 +265,8 @@ export default function Enroll() {
                   position: 'relative',
                   overflow: 'hidden',
                   transition: 'all 0.2s',
-                  boxShadow: selectedProgram?.id === prog.id ? 'var(--shadow-md)' : 'none'
+                  boxShadow: selectedProgram?.id === prog.id ? 'var(--shadow-md)' : 'none',
+                  textAlign: 'center'
                 }}
               >
                 {selectedProgram?.id === prog.id && (
@@ -274,12 +275,12 @@ export default function Enroll() {
                   </div>
                 )}
                 <h3 style={{ fontSize: 17, marginBottom: 8 }}>{prog.name}</h3>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: prog.description ? 12 : 0 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 8, marginBottom: prog.description ? 12 : 0 }}>
                   <span style={{ fontSize: 24, fontWeight: 800 }}>₹{prog.price}</span>
                   <span style={{ fontSize: 14, textDecoration: 'line-through', color: 'var(--text-3)' }}>₹{prog.original_price}</span>
                 </div>
                 {prog.description && (
-                  <div style={{ fontSize: 13, color: 'var(--text-2)', lineHeight: 1.5, borderTop: '1px solid var(--divider)', paddingTop: 12 }}>
+                  <div style={{ fontSize: 13, color: 'var(--text-2)', lineHeight: 1.5, borderTop: '1px solid var(--divider)', paddingTop: 12, margin: '0 auto' }}>
                     {prog.description}
                   </div>
                 )}
